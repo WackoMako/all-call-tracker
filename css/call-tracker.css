@@ -1,0 +1,14 @@
+.call-tracker{
+	color: inherit;
+	text-decoration: inherit;
+}
+
+#table-call-tracker{
+	border-radius: 5px;
+}
+
+#table-call-tracker tbody tr th{
+	background-color: yellow;
+	text-align: center !important;
+}
+
