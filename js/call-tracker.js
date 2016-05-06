@@ -23,6 +23,8 @@
       var replacement = "<a class=\"call-tracker phoneNo\" href=\"tel:$1\">$1</a>";//Add tracking to anchor tag
       //Replace All Numbers on the page with new line
       replaceNumber(page_text, search, replacement);
+
+      // htmlreplace(search,replacement);
             
       /* On click send analytics */
       $(".phoneNo").click( function(event, click)
@@ -58,10 +60,31 @@
 
  //Replace HTML 
   function replaceNumber(str, find, replace) {
-      $("body").children().each(function () {
+    // $("body").children().not("body > script").each(function () {
+      $("body").each(function () {
+      // $("body").find( "div").each(function () {
       $(this).html( $(this).html().replace(find,replace) );
   });
   }
+
+//  function htmlreplace(a, b, element) {    
+//     if (!element) element = document.body;    
+//     var nodes = element.childNodes;
+//     for (var n=0; n<nodes.length; n++) {
+//         if (nodes[n].nodeType == Node.TEXT_NODE) {
+//             var r = new RegExp(a, 'gi');
+//             if(nodes[n].textContent.match(r)) {
+//               alert(nodes[n].textContent); die();
+//                 nodes[n].textContent.html = nodes[n].textContent.html.replaceWith(b);
+//             }
+//             // nodes[n].textContent = nodes[n].textContent.replace(r, b);
+//         } else {
+//             htmlreplace(a, b, nodes[n]);
+//         }
+//     }
+// } 
+
+
 
 //Add analytics to onclick NOT USED
   function addAnalytics() {
